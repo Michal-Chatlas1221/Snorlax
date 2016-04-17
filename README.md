@@ -6,6 +6,7 @@ Instalacja i uruchomienie na ten moment [Zakładając że macie npm'a]:
 
 - sudo npm -g install sails
 - cd ~/path/to/cloned/project
+- npm install
 - sail lift
 
 
