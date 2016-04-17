@@ -2,7 +2,9 @@
 
 <ul>
   <% for (show in shows) { %>
-    <li><%= shows[show].name %></li>
+    <% var link = "/show/"+ shows[show].id %>
+
+    <li><a href=<%= link %> ><%= shows[show].name %></a></li>
 
   <% } %>
 </ul>
