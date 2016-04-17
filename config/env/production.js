@@ -12,6 +12,20 @@
 
 module.exports = {
 
+  connections: {
+    pgProd: {
+      adapter: 'sails-postrges',
+      host: 'ec2-46-137-125-22.eu-west-1.compute.amazonaws.com',
+      port: 5432,
+      user: 'hortanwfrlhtxl'
+      password: '1za_IhumnIQSjUDsIK8_zA82hU',
+      database: 'daovadtph7kmnb'
+    },
+    models: {
+      connection: 'pgProd'
+    }
+  }
+
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *
