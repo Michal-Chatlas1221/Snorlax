@@ -48,12 +48,10 @@ module.exports.routes = {
 
   'get /show': 'ShowController.index',
   'get /show/:id?': 'ShowController.find',
-
-  '/login' : {
-    controller: 'AuthController',
-    action: 'login'
-  },
-
+  'get /login': 'AuthController.login',
+  'post /login': 'AuthController.process',
+  'get /register': 'AuthController.register',
+  'post /register': 'AuthController.confirm',
 
   'logout': {
     controller: 'AuthController',

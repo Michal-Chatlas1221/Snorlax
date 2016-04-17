@@ -9,6 +9,7 @@ module.exports = {
   login: function (req, res) {
     res.view();
   },
+
   process: function(req, res){
     passport.authenticate('local', function(err, user, info) {
       if ((err) || (!user)) {
@@ -25,9 +26,23 @@ module.exports = {
       });
     })(req, res);
   },
+  
   logout: function (req,res){
     req.logout();
     res.send('logout successful');
+  },
+
+  register: function (req, res) {
+    res.view();
+  },
+
+  confirm: function(req, res) {
+    var user = User.create({
+      username: req.param('username'),
+      password: req.param('password')
+    }).exec(function(err, user) {
+      res.redirect('/');
+    });
   }
 };
 
