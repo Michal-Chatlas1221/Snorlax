@@ -1,15 +1,14 @@
 /**
- * sessionAuth
+ * @module       sessionAuth
+ * @description redirects to /login if user is not logged in
  *
- * @module      :: Policy
- * @description :: Simple policy to allow any authenticated user
- *                 Assumes that your login action in one of your controllers sets `req.session.authenticated = true;`
- * @docs        :: http://sailsjs.org/#!/documentation/concepts/Policies
- *
+ * @param req { Object } incoming request
+ * @param res { Object } result of the request
+ * @param next { funtion } default action
  */
 module.exports = function(req, res, next) {
 
-  // User is allowed, proceed to the next policy, 
+  // User is allowed, proceed to the next policy,
   // or if this is the last policy, the controller
   if (req.isAuthenticated()) {
     return next();

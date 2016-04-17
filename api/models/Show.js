@@ -1,12 +1,12 @@
 /**
- * Show.js
- *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @module Show
+ * @description Model to represent TV Show
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
 
+  /** attributes - name, description, imageUrl */
   attributes: {
     name: {
       type: 'string',

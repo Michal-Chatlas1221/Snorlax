@@ -37,5 +37,8 @@
     "url": "git://github.com/michal/Snorlax.git"
   },
   "author": "michal",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-jsdoc": "^1.1.0"
+  }
 }

@@ -1,15 +1,27 @@
 /**
-* AuthController
+* @module AuthController
+* @description Used for authenticating users
 *
 */
 var passport = require('passport');
 
 module.exports = {
-
+  /**
+    login action
+    renders 'auth/login' view
+    @param req { Object } request
+    @param res { Object } result
+  */
   login: function (req, res) {
     res.view();
   },
-
+  /**
+    Checks if given credentials are valid.
+    Displays error message if username/password don't match.
+    Displays success message if username/password match.
+    @param req { Object } request
+    @param res { Object } result
+  */
   process: function(req, res){
     passport.authenticate('local', function(err, user, info) {
       if ((err) || (!user)) {
@@ -26,7 +38,12 @@ module.exports = {
       });
     })(req, res);
   },
-  
+
+  /**
+    Destroys user's session
+    @param req { Object } request
+    @param res { Object } result
+  */
   logout: function (req,res){
     req.logout();
     res.send('logout successful');

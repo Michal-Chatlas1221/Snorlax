@@ -1,14 +1,17 @@
 /**
  * User
  *
- * @module      :: Model
- * @description :: Just a very simple user model.
+ * @module       User
+ * @description  User model
  *
  */
 var bcrypt = require('bcrypt');
- 
+
 module.exports = {
- 
+
+  /**
+    user attributes: username, password
+  */
   attributes: {
     username: {
       type: 'string',
@@ -25,7 +28,12 @@ module.exports = {
       return obj;
     }
   },
- 
+
+  /**
+    Encrypts the user's password using the bcrypt library - executed before the user is created
+    @param user {User} user object
+    @param cb {function} callback to be executed after encryption
+  */
   beforeCreate: function(user, cb) {
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(user.password, salt, function(err, hash) {
@@ -39,6 +47,6 @@ module.exports = {
       });
     });
   }
- 
+
 };
 

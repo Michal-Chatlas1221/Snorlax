@@ -14,6 +14,18 @@
 
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks('grunt-jsdoc');
+
+	grunt.initConfig({
+    jsdoc : {
+        dist : {
+            src: ['api/**/*.js', 'test/*.js'],
+            options: {
+                destination: 'doc'
+            }
+        }
+    }
+	});
 
 	// Load the include-all library in order to require all of our grunt
 	// configurations and task registrations dynamically.
