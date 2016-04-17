@@ -32,9 +32,7 @@ module.exports = {
       }
       req.logIn(user, function(err) {
         if (err) res.send(err);
-        return res.send({
-          message: 'login successful'
-        });
+        return res.redirect('/show')
       });
     })(req, res);
   },
@@ -49,16 +47,28 @@ module.exports = {
     res.send('logout successful');
   },
 
+  /**
+    Renders register form
+    @param req { Object } request
+    @param res { Object } result
+  */
   register: function (req, res) {
     res.view();
   },
 
+  /**
+    Creates user account
+    @param req { Object } request
+    @param res { Object } result
+  */
   confirm: function(req, res) {
     var user = User.create({
       username: req.param('username'),
       password: req.param('password')
     }).exec(function(err, user) {
-      res.redirect('/');
+      req.logIn(user, function(err) {
+        return res.redirect('/show');
+      });
     });
   }
 };

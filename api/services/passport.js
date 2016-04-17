@@ -3,7 +3,7 @@ var passport = require('passport'),
   bcrypt = require('bcrypt')
 //helper functions
 function findById(id, fn) {
-  User.findOne(id).done(function (err, user) {
+  User.findOne(id).exec(function (err, user) {
  if (err) {
    return fn(null, null);
  } else {

@@ -53,7 +53,7 @@ module.exports.routes = {
   'get /register': 'AuthController.register',
   'post /register': 'AuthController.confirm',
 
-  'logout': {
+  '/logout': {
     controller: 'AuthController',
     action: 'logout'
   }
