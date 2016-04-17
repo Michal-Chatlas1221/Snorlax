@@ -1,7 +1,7 @@
 {
-  "name": "dupa",
+  "name": "Snorlax",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -24,7 +24,7 @@
     "sails-disk": "~0.10.9",
     "passport": "~0.1.16",
     "passport-local": "~0.1.6",
-    "bcrypt": "~0.7.6",
+    "bcrypt": "~0.8.5",
     "sails-postgresql": "~0.12.1"
   },
   "scripts": {
