@@ -11,6 +11,12 @@ module.exports = {
     name: {
       type: 'string',
       required: true
+    },
+    description: {
+      type: 'string'
+    },
+    imageUrl: {
+      type: 'string'
     }
   }
 };
