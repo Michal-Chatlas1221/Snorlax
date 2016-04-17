@@ -21,7 +21,11 @@
     "include-all": "~0.1.6",
     "rc": "1.0.1",
     "sails": "~0.12.3",
-    "sails-disk": "~0.10.9"
+    "sails-disk": "~0.10.9",
+    "passport": "~0.1.16",
+    "passport-local": "~0.1.6",
+    "bcrypt": "~0.7.6",
+    "sails-postgresql": "~0.12.1"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -30,7 +34,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/michal/dupa.git"
+    "url": "git://github.com/michal/Snorlax.git"
   },
   "author": "michal",
   "license": ""
