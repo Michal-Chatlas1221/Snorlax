@@ -11,6 +11,14 @@ module.exports = {
     Show.find().exec(function(err, shows) {
       return res.view({shows: shows});
     })
+  },
+
+  find: function (req, res, next) {
+    var id = req.param('id');
+
+    Show.findOne(id).exec(function(err, show) {
+      return res.view({show: show});
+    })
   }
 
 };
