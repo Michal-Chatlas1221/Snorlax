@@ -8,7 +8,7 @@ Instalacja i uruchomienie na ten moment [Zakładając że macie npm'a]:
 - cd ~/path/to/cloned/project
 - npm install
 - cp config/connections.default.js config/connections.js
-- sail lift
+- sails lift
 
 
 Potem apka jest na localhost:1337
