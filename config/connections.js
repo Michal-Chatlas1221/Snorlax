@@ -75,7 +75,7 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   default: {
-    adapter: 'sails-postrgesql',
+    adapter: 'sails-postgresql',
     host: 'ec2-46-137-125-22.eu-west-1.compute.amazonaws.com',
     port: 5432,
     user: 'hortanwfrlhtxl',
