@@ -120,5 +120,3 @@ nbproject
 project/**/*
 config/connections.js
 
-./doc
-./doc/**
