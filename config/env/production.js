@@ -17,7 +17,7 @@ module.exports = {
       adapter: 'sails-postrges',
       host: 'ec2-46-137-125-22.eu-west-1.compute.amazonaws.com',
       port: 5432,
-      user: 'hortanwfrlhtxl'
+      user: 'hortanwfrlhtxl',
       password: '1za_IhumnIQSjUDsIK8_zA82hU',
       database: 'daovadtph7kmnb'
     },
