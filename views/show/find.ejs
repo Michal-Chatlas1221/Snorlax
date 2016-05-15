@@ -5,9 +5,22 @@
 
   <%= showFollowed ? 'Followed' : '' %>
 
+  <h2>Rating</h2>
+  <% if (rating) { %>
+    Your rating: <%= rating.rating %>
+  <% } else { %>
+    <form method="POST" action="/show_rating">
+      <input type="hidden" name="showId" value=<%= show.id %>>
+      <input type="number" name="rating">
+
+      <input type="submit" value="Add rating">
+    </form>
+  <% } %>
+
   <form method="POST" action="/user_show">
   	Password<br>
     <input type="hidden" name="showId" value=<%= show.id %>>
   	<input type="submit" value="Follow">
   </form>
+
 </div>

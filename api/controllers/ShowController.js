@@ -28,20 +28,29 @@ module.exports = {
     @param next optional param
   */
   find: function (req, res, next) {
-    var id = req.param('id');
+    const id = req.param('id');
+    const userId = req.user.id;
 
     Show.findOne(id).exec(function(err, show) {
       User
-        .findOne(req.user.id)
-        .populate('shows')
-        .exec(function(err, user) {
-          const showFollowed = user.shows.find(s => s.id == show.id) != null;
+      .findOne(userId)
+      .populate('shows')
+      .exec(function(err, user) {
+        const rating  =
+          ShowRating
+          .findOne()
+          .where({user: userId, show: show.id})
+          .exec(function(err, rating) {
+            console.log(err, rating)
+            const showFollowed = user.shows.find(s => s.id == show.id) != null;
 
-          return res.view({
-            show: show,
-            showFollowed: showFollowed,
-          });
-        });
+            return res.view({
+              show: show,
+              showFollowed: showFollowed,
+              rating: rating,
+            });
+        })
+      });
     })
   }
 
