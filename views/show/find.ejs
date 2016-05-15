@@ -2,4 +2,12 @@
 <div>
   <p>Description:</p>
   <p><%= show.description || '' %></p>
+
+  <%= showFollowed ? 'Followed' : '' %>
+
+  <form method="POST" action="/user_show">
+  	Password<br>
+    <input type="hidden" name="showId" value=<%= show.id %>>
+  	<input type="submit" value="Follow">
+  </form>
 </div>

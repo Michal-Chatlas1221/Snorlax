@@ -1,0 +1,10 @@
+<h1>Followed shows</h1>
+
+<ul>
+  <% for (show in shows) { %>
+    <% var link = "/show/"+ shows[show].id %>
+
+    <li><a href=<%= link %> ><%= shows[show].name %></a></li>
+
+  <% } %>
+</ul>

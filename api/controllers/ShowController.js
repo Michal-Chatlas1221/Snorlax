@@ -31,9 +31,18 @@ module.exports = {
     var id = req.param('id');
 
     Show.findOne(id).exec(function(err, show) {
-      return res.view({show: show});
+      User
+        .findOne(req.user.id)
+        .populate('shows')
+        .exec(function(err, user) {
+          const showFollowed = user.shows.find(s => s.id == show.id) != null;
+
+          return res.view({
+            show: show,
+            showFollowed: showFollowed,
+          });
+        });
     })
   }
 
 };
-

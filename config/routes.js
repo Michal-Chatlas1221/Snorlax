@@ -53,6 +53,9 @@ module.exports.routes = {
   'get /register': 'AuthController.register',
   'post /register': 'AuthController.confirm',
 
+  'get /user_show': 'UserShowController.index',
+  'post /user_show': 'UserShowController.create',
+
   '/logout': {
     controller: 'AuthController',
     action: 'logout'
