@@ -26,7 +26,14 @@ module.exports = {
       var obj = this.toObject();
       delete obj.password;
       return obj;
-    }
+    },
+
+    shows: {
+      collection: 'show',
+      via: 'users',
+      dominant: true,
+    },
+
   },
 
   /**
@@ -49,4 +56,3 @@ module.exports = {
   }
 
 };
-

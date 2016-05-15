@@ -17,7 +17,11 @@ module.exports = {
     },
     imageUrl: {
       type: 'string'
-    }
+    },
+
+    users: {
+      collection: 'user',
+      via: 'shows',
+    },
   }
 };
-
