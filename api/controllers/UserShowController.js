@@ -14,6 +14,7 @@ module.exports = {
     });
   },
   create: function(req, res) {
+    console.log('create');
     const showId = req.allParams()['showId'];
 
     User.findOne(req.user.id).exec(function(err, user) {
@@ -22,5 +23,14 @@ module.exports = {
     });
 
     res.redirect('/show');
+  },
+  destroy: function(req, res) {
+    const id = req.allParams()['showId'];
+
+    User.findOne(req.user.id).populate('shows').exec(function(err, user) {
+      user.shows.remove(id);
+      user.save(function(err) { res.redirect("/show"); });
+    });
+
   }
 };
