@@ -62,9 +62,12 @@ module.exports = {
     @param res { Object } result
   */
   confirm: function(req, res) {
+    const username = req.param('username');
+    const password = req.param('password');
+    if (!username || !password) return res.redirect('/register');
     var user = User.create({
-      username: req.param('username'),
-      password: req.param('password')
+      username: username,
+      password: password
     }).exec(function(err, user) {
       req.logIn(user, function(err) {
         return res.redirect('/show');

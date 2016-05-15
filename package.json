@@ -25,11 +25,13 @@
     "passport": "~0.1.16",
     "passport-local": "~0.1.6",
     "bcrypt": "~0.8.5",
-    "sails-postgresql": "~0.12.1"
+    "sails-postgresql": "~0.12.1",
+    "supertest": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "repository": {

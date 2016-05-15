@@ -76,11 +76,11 @@ module.exports.connections = {
   ***************************************************************************/
   default: {
     adapter: 'sails-postgresql',
-    host: 'ec2-46-137-125-22.eu-west-1.compute.amazonaws.com',
+    host: '127.0.0.1',
     port: 5432,
-    user: 'hortanwfrlhtxl',
-    password: '1za_IhumnIQSjUDsIK8_zA82hU',
-    database: 'daovadtph7kmnb'
+    user: 'postgres',
+    password: 'postgres',
+    database: 'bimba'
   }
 
 
