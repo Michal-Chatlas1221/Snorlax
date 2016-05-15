@@ -7,7 +7,6 @@
 
 module.exports = {
   create: function(req, res) {
-    console.log('rating');
     const showId = req.allParams()['showId'];
     const userId = req.user.id
     const rating = req.allParams()['rating'];
