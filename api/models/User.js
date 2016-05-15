@@ -3,7 +3,10 @@
  *
  * @module       User
  * @description  User model
- *
+ * @param username { string } username - required
+ * @param password { string } password - required
+ * @param toJSON { function } returns user in the JSON format without the password
+ * @param shows { Array } shows followed by the user
  */
 var bcrypt = require('bcrypt');
 
@@ -33,7 +36,6 @@ module.exports = {
       via: 'users',
       dominant: true,
     },
-
   },
 
   /**

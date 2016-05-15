@@ -55,6 +55,9 @@ module.exports.routes = {
 
   'get /user_show': 'UserShowController.index',
   'post /user_show': 'UserShowController.create',
+  'delete /user_show': 'UserShowController.destroy',
+
+  'post /show_rating': 'ShowRatingController.create',
 
   '/logout': {
     controller: 'AuthController',
