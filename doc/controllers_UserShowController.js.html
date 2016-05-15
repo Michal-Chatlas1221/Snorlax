@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: controllers/ShowController.js</title>
+    <title>JSDoc: Source: controllers/UserShowController.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: controllers/ShowController.js</h1>
+    <h1 class="page-title">Source: controllers/UserShowController.js</h1>
 
     
 
@@ -27,61 +27,56 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * ShowController
- * @module      ShowController
- * @description :: Server-side logic for managing shows
+ * UserShowController
+ * @module      UserShowController
+ * @description :: Server-side logic for managing user's shows
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 module.exports = {
-
   /**
-    Show the list of all shows
-    Renders show/index
-    @param req { Object } request
-    @param res { Object } result
-    @param next { function } default action
+    index action
+    Fetches the list of shows that current user is following and renders index view.
+    @param req { Object } Incoming request - requires user to be logged in.
   */
   index: function(req, res) {
-    Show.find().exec(function(err, shows) {
-      return res.view('show/index', {shows: shows});
-    })
+    User.findOne(req.user.id).populate('shows').exec(function(err, user) {
+      const userShows = user.shows.filter(s => typeof s != 'function');
+
+      return res.view('user_show/index', {shows: userShows});
+    });
   },
-
   /**
-    Show the details of a specified show
-    Renders show/show
-    @param req Object request
-    @param res Object result
-    @param next optional param
+  create action
+  Adds show with the given id to the current user's shows list.
+  Redirects to the shows list.
+  @param req { Object } Incoming request - requires user to be logged in. showId parameter is required.
   */
-  find: function (req, res, next) {
-    const id = req.param('id');
-    const userId = req.user.id;
+  create: function(req, res) {
+    const showId = req.allParams()['showId'];
 
-    Show.findOne(id).exec(function(err, show) {
-      User
-      .findOne(userId)
-      .populate('shows')
-      .exec(function(err, user) {
-        const rating  =
-          ShowRating
-          .findOne()
-          .where({user: userId, show: show.id})
-          .exec(function(err, rating) {
-            console.log(err, rating)
-            const showFollowed = user.shows.find(s => s.id == show.id) != null;
+    User.findOne(req.user.id).exec(function(err, user) {
+      user.shows.add(showId);
+      user.save(function(err) {});
+    });
 
-            return res.view({
-              show: show,
-              showFollowed: showFollowed,
-              rating: rating,
-            });
-        })
-      });
-    })
+    res.redirect('/show');
+  },
+  /**
+  destroy action
+  Removes show with the given id from the current user's shows list.
+  Redirects to the shows list.
+  @param req { Object } Incoming request - requires user to be logged in. showId parameter is required.
+  */
+  destroy: function(req, res) {
+    const id = req.allParams()['showId'];
+
+    User.findOne(req.user.id).populate('shows').exec(function(err, user) {
+      user.shows.remove(id);
+      user.save(function(err) { res.redirect("/show"); });
+    });
+
   }
-
 };
 </code></pre>
         </article>

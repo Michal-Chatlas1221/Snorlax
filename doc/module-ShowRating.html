@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: User</title>
+    <title>JSDoc: Module: ShowRating</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: User</h1>
+    <h1 class="page-title">Module: ShowRating</h1>
 
     
 
@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description">User model</div>
+            <div class="description">Model to represent TV Shows' ratings</div>
         
 
         
@@ -79,13 +79,13 @@
 
         <tr>
             
-                <td class="name"><code>username</code></td>
+                <td class="name"><code>show</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">integer</span>
 
 
             
@@ -95,20 +95,20 @@
 
             
 
-            <td class="description last">username - required</td>
+            <td class="description last">show id - required</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>password</code></td>
+                <td class="name"><code>user</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">integer</span>
 
 
             
@@ -118,20 +118,20 @@
 
             
 
-            <td class="description last">password - required</td>
+            <td class="description last">user id - required</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>toJSON</code></td>
+                <td class="name"><code>rating</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">integer</span>
 
 
             
@@ -141,30 +141,7 @@
 
             
 
-            <td class="description last">returns user in the JSON format without the password</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>shows</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">shows followed by the user</td>
+            <td class="description last">integer - required</td>
         </tr>
 
     
@@ -205,7 +182,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_User.js.html">models/User.js</a>, <a href="models_User.js.html#line1">line 1</a>
+        <a href="models_ShowRating.js.html">models/ShowRating.js</a>, <a href="models_ShowRating.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -256,7 +233,7 @@
 
 
 <div class="description">
-    user attributes: username, password
+    attributes - show, user, rating
 </div>
 
 
@@ -294,7 +271,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_User.js.html">models/User.js</a>, <a href="models_User.js.html#line18">line 18</a>
+        <a href="models_ShowRating.js.html">models/ShowRating.js</a>, <a href="models_ShowRating.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -313,164 +290,6 @@
         
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id=".beforeCreate"><span class="type-signature">(static) </span>beforeCreate<span class="signature">(user, cb)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Encrypts the user's password using the bcrypt library - executed before the user is created
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>user</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">User</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">user object</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>cb</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback to be executed after encryption</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_User.js.html">models/User.js</a>, <a href="models_User.js.html#line46">line 46</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     

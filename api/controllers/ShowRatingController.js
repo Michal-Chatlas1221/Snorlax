@@ -6,6 +6,12 @@
  */
 
 module.exports = {
+  /**
+    create action
+    creates a rating for a show only if user haven't rated the show before
+    @param req { Object } incoming request - showId and rating parameters are required
+    @param res { Object} request's result - redirects to the show page
+  */
   create: function(req, res) {
     const showId = req.allParams()['showId'];
     const userId = req.user.id

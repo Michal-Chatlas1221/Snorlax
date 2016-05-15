@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: policies/sessionAuth.js</title>
+    <title>JSDoc: Source: models/ShowRating.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: policies/sessionAuth.js</h1>
+    <h1 class="page-title">Source: models/ShowRating.js</h1>
 
     
 
@@ -27,24 +27,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module       sessionAuth
- * @description redirects to /login if user is not logged in
- *
- * @param req { Object } incoming request
- * @param res { Object } result of the request
- * @param next { funtion } default action
+ * @module ShowRating
+ * @description Model to represent TV Shows' ratings
+ * @param show { integer } show id - required
+ * @param user { integer } user id - required
+ * @param rating { integer } integer - required
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
-module.exports = function(req, res, next) {
 
-  // User is allowed, proceed to the next policy,
-  // or if this is the last policy, the controller
-  if (req.isAuthenticated()) {
-    return next();
+module.exports = {
+
+  /** attributes - show, user, rating */
+  attributes: {
+    show: {
+      model: 'show',
+      required: true,
+    },
+    user: {
+      model: 'user',
+      required: true,
+    },
+    rating: {
+      type: 'integer',
+      required: true,
+    },
   }
-  
-  // User is not allowed
-  // (default res.forbidden() behavior can be overridden in `config/403.js`)
-  return res.redirect("/login");
 };
 </code></pre>
         </article>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: ShowController</title>
+    <title>JSDoc: Module: UserShowController</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: ShowController</h1>
+    <h1 class="page-title">Module: UserShowController</h1>
 
     
 
@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description">:: Server-side logic for managing shows</div>
+            <div class="description">:: Server-side logic for managing user's shows</div>
         
 
         
@@ -87,7 +87,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_ShowController.js.html">controllers/ShowController.js</a>, <a href="controllers_ShowController.js.html#line1">line 1</a>
+        <a href="controllers_UserShowController.js.html">controllers/UserShowController.js</a>, <a href="controllers_UserShowController.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -137,15 +137,16 @@
 
     
 
-    <h4 class="name" id=".find"><span class="type-signature">(static) </span>find<span class="signature">(req, res, next)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".create"><span class="type-signature">(static) </span>create<span class="signature">(req)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Show the details of a specified show
-    Renders show/show
+    create action
+  Adds show with the given id to the current user's shows list.
+  Redirects to the shows list.
 </div>
 
 
@@ -186,23 +187,10 @@
 
             <td class="type">
             
-            </td>
+                
+<span class="param-type">Object</span>
 
-            
 
-            
-
-            <td class="description last">Object request</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
             
             </td>
 
@@ -210,25 +198,7 @@
 
             
 
-            <td class="description last">Object result</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>next</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">optional param</td>
+            <td class="description last">Incoming request - requires user to be logged in. showId parameter is required.</td>
         </tr>
 
     
@@ -269,7 +239,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_ShowController.js.html">controllers/ShowController.js</a>, <a href="controllers_ShowController.js.html#line30">line 30</a>
+        <a href="controllers_UserShowController.js.html">controllers/UserShowController.js</a>, <a href="controllers_UserShowController.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -300,15 +270,16 @@
 
     
 
-    <h4 class="name" id=".index"><span class="type-signature">(static) </span>index<span class="signature">(req, res, next)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".destroy"><span class="type-signature">(static) </span>destroy<span class="signature">(req)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Show the list of all shows
-    Renders show/index
+    destroy action
+  Removes show with the given id from the current user's shows list.
+  Redirects to the shows list.
 </div>
 
 
@@ -360,53 +331,7 @@
 
             
 
-            <td class="description last">request</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">result</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>next</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">default action</td>
+            <td class="description last">Incoming request - requires user to be logged in. showId parameter is required.</td>
         </tr>
 
     
@@ -447,7 +372,139 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_ShowController.js.html">controllers/ShowController.js</a>, <a href="controllers_ShowController.js.html#line17">line 17</a>
+        <a href="controllers_UserShowController.js.html">controllers/UserShowController.js</a>, <a href="controllers_UserShowController.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".index"><span class="type-signature">(static) </span>index<span class="signature">(req)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    index action
+    Fetches the list of shows that current user is following and renders index view.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Incoming request - requires user to be logged in.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_UserShowController.js.html">controllers/UserShowController.js</a>, <a href="controllers_UserShowController.js.html#line14">line 14</a>
     </li></ul></dd>
     
 

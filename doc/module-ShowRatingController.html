@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: sessionAuth</title>
+    <title>JSDoc: Module: ShowRatingController</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: sessionAuth</h1>
+    <h1 class="page-title">Module: ShowRatingController</h1>
 
     
 
@@ -38,13 +38,115 @@
     <div class="container-overview">
     
         
-            <div class="description">redirects to /login if user is not logged in</div>
+            <div class="description">:: Server-side logic for managing shows' ratings</div>
         
 
         
             
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_ShowRatingController.js.html">controllers/ShowRatingController.js</a>, <a href="controllers_ShowRatingController.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".create"><span class="type-signature">(static) </span>create<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    create action
+    creates a rating for a show only if user haven't rated the show before
+</div>
 
 
 
@@ -95,7 +197,7 @@
 
             
 
-            <td class="description last">incoming request</td>
+            <td class="description last">incoming request - showId and rating parameters are required</td>
         </tr>
 
     
@@ -118,30 +220,7 @@
 
             
 
-            <td class="description last">result of the request</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>next</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">funtion</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">default action</td>
+            <td class="description last">request's result - redirects to the show page</td>
         </tr>
 
     
@@ -182,7 +261,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="policies_sessionAuth.js.html">policies/sessionAuth.js</a>, <a href="policies_sessionAuth.js.html#line1">line 1</a>
+        <a href="controllers_ShowRatingController.js.html">controllers/ShowRatingController.js</a>, <a href="controllers_ShowRatingController.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -209,21 +288,6 @@
 
 
         
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
     
 
     
