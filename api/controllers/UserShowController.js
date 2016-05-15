@@ -14,7 +14,6 @@ module.exports = {
     });
   },
   create: function(req, res) {
-    console.log('create');
     const showId = req.allParams()['showId'];
 
     User.findOne(req.user.id).exec(function(err, user) {
