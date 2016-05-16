@@ -3,7 +3,6 @@
  */
 var request = require('supertest');
 var simple = require('simple-mock');
-var req = require("request");
 
 describe('AuthController', function() {
 

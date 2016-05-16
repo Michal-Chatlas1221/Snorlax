@@ -27,7 +27,8 @@
     "bcrypt": "~0.8.5",
     "sails-postgresql": "~0.12.1",
     "supertest": "*",
-    "simple-mock": "*"
+    "simple-mock": "*",
+    "chai": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
