@@ -28,7 +28,9 @@
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9",
     "sails-postgresql": "~0.12.1",
-    "supertest": "*"
+    "supertest": "*",
+    "simple-mock": "*",
+    "chai": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
