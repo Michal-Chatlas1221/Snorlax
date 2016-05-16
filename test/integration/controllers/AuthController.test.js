@@ -2,6 +2,8 @@
  * Created by piotrowy on 16.05.2016.
  */
 var request = require('supertest');
+var simple = require('simple-mock');
+var req = require("request");
 
 describe('AuthController', function() {
 
@@ -39,3 +41,5 @@ describe('AuthController', function() {
   });
 
 });
+
+

@@ -26,7 +26,8 @@
     "passport-local": "~0.1.6",
     "bcrypt": "~0.8.5",
     "sails-postgresql": "~0.12.1",
-    "supertest": "*"
+    "supertest": "*",
+    "simple-mock": "*"
   },
   "scripts": {
     "debug": "node debug app.js",
