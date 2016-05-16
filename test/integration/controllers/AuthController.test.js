@@ -3,6 +3,9 @@
  */
 var request = require('supertest');
 var simple = require('simple-mock');
+var assert = require('chai').assert;
+
+var AuthController = require('../../../api/controllers/AuthController.js');
 
 describe('AuthController', function() {
 
@@ -39,6 +42,17 @@ describe('AuthController', function() {
     });
   });
 
+  describe('#logout', function() {
+    var req = {};
+    simple.mock(req, 'logout');
+
+    var res = {};
+    simple.mock(res, 'send');
+
+    AuthController.logout(req, res);
+
+    assert.equal(req.logout.called, true);
+    assert.equal(res.send.called, true);
+  })
+
 });
-
-
