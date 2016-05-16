@@ -4,12 +4,8 @@
 var request = require('supertest');
 var simple = require('simple-mock');
 var assert = require('chai').assert;
-<<<<<<< HEAD
-
 var AuthController = require('../../../api/controllers/AuthController.js');
-=======
 var auth = require('./../../../api/controllers/AuthController');
->>>>>>> 905aeb0cd1f2ed89c0637d26f49c11f5ba08a4e1
 
 describe('AuthController', function() {
 
@@ -72,6 +68,18 @@ describe('AuthController', function() {
       assert.equal(res.send.called, true);
       done();
     });
+
+    it('mock authenticate should redirect to /show', function(done){
+      passport = {};
+      simple.mock(passport, 'authenticate').callbackWith(null, {}, null);
+      var req = {},
+      res = {};
+      simple.mock(req, 'logIn').callbackWith(null);
+      simple.mock(res, 'send');
+
+      auth.process(req,res);
+      assert.equal(res.send.called, true);
+      done();
+    });
   });
-});
 });
