@@ -3,6 +3,8 @@
  */
 var request = require('supertest');
 var simple = require('simple-mock');
+var assert = require('chai').assert;
+var auth = require('./../../../api/controllers/AuthController');
 
 describe('AuthController', function() {
 
@@ -39,6 +41,20 @@ describe('AuthController', function() {
     });
   });
 
+  describe('#process()', function() {
+    it('mock authenticate should redirect to /show', function(done){
+      passport = {};
+      simple.mock(passport, 'authenticate').callbackWith(null, {}, null);
+      var req = {},
+          res = {};
+      simple.mock(req, 'logIn').callbackWith(null);
+      simple.mock(res, 'send');
+
+      auth.process(req,res);
+      assert.equal(res.send.called, true);
+      done();
+    });
+  });
 });
 
 
