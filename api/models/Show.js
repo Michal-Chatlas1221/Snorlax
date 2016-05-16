@@ -27,5 +27,17 @@ module.exports = {
       collection: 'user',
       via: 'shows',
     },
+
+    calcAvgRating: function(callback) {
+      const id = this.id;
+      ShowRating.find().where({show: id}).exec(function(err, ratings) {
+        const showRatings =
+          ratings
+          .map(function(rating) { return rating.rating })
+          .reduce(function(a, b) { return a + b; })
+
+        return callback(showRatings / ratings.length);
+      })
+    }
   }
 };
