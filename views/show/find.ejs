@@ -6,6 +6,8 @@
   <%= showFollowed ? 'Followed' : '' %>
 
   <h2>Rating</h2>
+  <p>Average rating: <%= avgRating %></p>
+  
   <% if (rating) { %>
     Your rating: <%= rating.rating %>
   <% } else { %>

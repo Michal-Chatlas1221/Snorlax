@@ -44,11 +44,15 @@ module.exports = {
             console.log(err, rating)
             const showFollowed = user.shows.find(s => s.id == show.id) != null;
 
-            return res.view({
-              show: show,
-              showFollowed: showFollowed,
-              rating: rating,
-            });
+            show.calcAvgRating(function(avgRating) {
+              return res.view({
+                show: show,
+                showFollowed: showFollowed,
+                rating: rating,
+                avgRating: avgRating,
+              });
+            })
+
         })
       });
     })
